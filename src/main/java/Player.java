@@ -6,6 +6,7 @@ public class Player
     private Piece piece;
     private ArrayList<Die> dices;
     private Board board;
+    private double money;
 
     public Player(String name, ArrayList<Die> dices, Board board)
     {
@@ -13,6 +14,7 @@ public class Player
         this.dices = dices;
         this.board = board;
         this.piece = new Piece(name + "'s Piece", board.getStartingPos());
+        this.money = 1500;
     }
 
     public void takeTurn()
@@ -26,6 +28,8 @@ public class Player
         }
 
         piece.setLocation(board.getSquare(piece.getLocation(), value));
+
+        piece.getLocation().landedOn(this);
     }
 
     public String getName()
@@ -36,5 +40,24 @@ public class Player
     public Square getLocation()
     {
         return this.piece.getLocation();
+    }
+
+    public void setLocation(Square square)
+    {
+        this.piece.setLocation(square);
+    }
+
+    public double getNetWorth() { return this.money; }
+
+    public Piece getPiece() { return this.piece; }
+
+    public void reduceCash(double montant)
+    {
+        this.money -= montant;
+    }
+
+    public void addCash(double montant)
+    {
+        this.money += montant;
     }
 }

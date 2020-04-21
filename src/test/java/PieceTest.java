@@ -11,8 +11,8 @@ public class PieceTest
     @BeforeEach
     void initializeValues()
     {
-        s = new Square("Square 1");
-        s2 = new Square("Square 2");
+        s = new RegularSquare("Square 1");
+        s2 = new RegularSquare("Square 2");
         p = new Piece ("Piece de Jean-Paul",s);
     }
 
