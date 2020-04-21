@@ -13,7 +13,6 @@ public class Player
         this.dices = dices;
         this.board = board;
         this.piece = new Piece(name + "'s Piece", board.getStartingPos());
-        // todo : piece;
     }
 
     public void takeTurn()

@@ -8,8 +8,6 @@ public class MonopolyGame
     private Board board;
     private ArrayList<Player> playerList;
 
-    // todo : refractor en arraylist probablement
-
     public static void main (String[] args)
     {
         try
