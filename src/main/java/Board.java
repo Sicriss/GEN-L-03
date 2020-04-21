@@ -14,11 +14,26 @@ public class Board
     {
         squares = new ArrayList<Square>();
 
-        squares.add(new Square("GO"));
-
-        for (int i = 1; i < NUMBER_SQUARES; ++i)
+        for (int i = 0; i < NUMBER_SQUARES; ++i)
         {
-            squares.add(new Square("Square " + String.valueOf(i)));
+            switch (i)
+            {
+                case 0:
+                    squares.add(new GoSquare("GO"));
+                    break;
+                case 10:
+                    squares.add(new RegularSquare("Jail"));
+                    break;
+                case 20:
+                    squares.add(new IncomeTaxSquare("Taxes"));
+                    break;
+                case 30:
+                    squares.add(new GoToJailSquare("GoToJail", squares.get(10)));
+                    break;
+                default:
+                    squares.add(new RegularSquare("Square " + String.valueOf(i)));
+                    break;
+            }
         }
     }
 

@@ -1,18 +1,15 @@
-import org.graalvm.compiler.hotspot.stubs.OutOfBoundsExceptionStub;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class DieTest
 {
-    @Test
+    @RepeatedTest(20)
     void theDieValueShouldRemainPossible()
     {
         Die d = new Die();
 
-        for (int i = 0; i < 100; i++)
-        {
-            d.roll();
+        d.roll();
 
-            assert(d.getValue() <= 6 && d.getValue() >= 1);
-        }
+        assert(d.getValue() <= 6 && d.getValue() >= 1);
     }
 }
