@@ -32,4 +32,9 @@ public class Player
     {
         return this.name;
     }
+
+    public Square getLocation()
+    {
+        return this.piece.getLocation();
+    }
 }

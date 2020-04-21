@@ -4,7 +4,7 @@ public class Square
 
     public Square(String name)
     {
-        name = name;
+        this.name = name;
     }
 
     public String getName()
