@@ -26,6 +26,6 @@ public class GoToJailSquareTest
 
         player.getLocation().landedOn(player);
 
-        assertEquals(player.getLocation(), jail);
+        assertSame(player.getLocation(), jail);
     }
 }

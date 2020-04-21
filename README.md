@@ -6,3 +6,4 @@ assert
 assertEquals
 assertThrow
 assertNotNull
+assertSame
