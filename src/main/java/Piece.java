@@ -18,4 +18,9 @@ public class Piece
     {
         return location;
     }
+
+    public void setLocation(Square square)
+    {
+        this.location = square;
+    }
 }

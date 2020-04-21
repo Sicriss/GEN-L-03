@@ -18,7 +18,15 @@ public class Player
 
     public void takeTurn()
     {
+        int value = 0;
 
+        for (Die d : dices)
+        {
+            d.roll();
+            value += d.getValue();
+        }
+
+        piece.setLocation(board.getSquare(piece.getLocation(), value));
     }
 
     public String getName()
