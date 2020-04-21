@@ -1,2 +1,4 @@
-public class MonopolyGameTest {
+public class MonopolyGameTest
+{
+
 }
