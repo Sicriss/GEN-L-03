@@ -5,6 +5,8 @@ public class MonopolyGame
     private Die[] diceList = {new Die(), new Die()};
     private Board board = new Board();
 
+    // todo : refractor en arraylist probablement
+
     public static void main (String[] args)
     {
         try
@@ -32,7 +34,7 @@ public class MonopolyGame
         playGame();
     }
 
-    public void playGame()
+    private void playGame()
     {
         // Each round
         for (int i = 0; i < NUMBER_ROUNDS; ++i)
@@ -41,7 +43,7 @@ public class MonopolyGame
         }
     }
 
-    public void playRound()
+    private void playRound()
     {
         // Each turn
         for (Player p : this.playerList)
