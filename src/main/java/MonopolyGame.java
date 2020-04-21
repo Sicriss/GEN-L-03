@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class MonopolyGame
 {
     private final static int NUMBER_ROUNDS = 20;
-    private Player[] playerList;
-    private Die[] diceList = {new Die(), new Die()};
-    private Board board = new Board();
+    private final static int NUMBER_DICES = 2;
+    private ArrayList<Die> diceList;
+    private Board board;
+    private ArrayList<Player> playerList;
 
     // todo : refractor en arraylist probablement
 
@@ -24,11 +27,20 @@ public class MonopolyGame
         if (playerNames.length > 8 || playerNames.length < 2)
             throw new IllegalArgumentException("The number of players is incorrect");
 
-        this.playerList = new Player[playerNames.length];
+        diceList = new ArrayList<Die>();
 
-        for (int i = 0; i < playerNames.length; ++i)
+        for (int i = 0; i < NUMBER_DICES; ++i)
         {
-            this.playerList[i] = new Player(playerNames[i]);
+            diceList.add(new Die());
+        }
+
+        board = new Board();
+
+        playerList = new ArrayList<Player>();
+
+        for (String name : playerNames)
+        {
+            playerList.add(new Player(name, diceList, board));
         }
 
         playGame();
