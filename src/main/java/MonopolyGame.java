@@ -4,7 +4,7 @@ public class MonopolyGame
 {
     private final static int NUMBER_ROUNDS = 20;
     private final static int NUMBER_DICES = 2;
-    private ArrayList<Die> diceList;
+    private Cup cup;
     private Board board;
     private ArrayList<Player> playerList;
 
@@ -25,12 +25,7 @@ public class MonopolyGame
         if (playerNames.length > 8 || playerNames.length < 2)
             throw new IllegalArgumentException("The number of players is incorrect");
 
-        diceList = new ArrayList<Die>();
-
-        for (int i = 0; i < NUMBER_DICES; ++i)
-        {
-            diceList.add(new Die());
-        }
+        cup = new Cup(NUMBER_DICES);
 
         board = new Board();
 
@@ -38,7 +33,7 @@ public class MonopolyGame
 
         for (String name : playerNames)
         {
-            playerList.add(new Player(name, diceList, board));
+            playerList.add(new Player(name, cup, board));
         }
 
         System.out.println("The game is about to begin");

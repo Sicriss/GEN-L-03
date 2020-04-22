@@ -9,16 +9,11 @@ public class IncomeTaxSquareTest
     @Test
     void playerShouldReceiveMoneyOnTheGoSquare()
     {
-        ArrayList<Die> diceList = new ArrayList<Die>();
-
-        for (int i = 0; i < 2; ++i)
-        {
-            diceList.add(new Die());
-        }
+        Cup cup = new Cup(2);
 
         Board board = new Board();
 
-        Player player = new Player("Paul", diceList, board);
+        Player player = new Player("Paul", cup, board);
 
         Square taxes = new IncomeTaxSquare("Taxes");
 

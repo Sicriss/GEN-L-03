@@ -4,14 +4,14 @@ public class Player
 {
     private String name;
     private Piece piece;
-    private ArrayList<Die> dices;
+    private Cup cup;
     private Board board;
     private double money;
 
-    public Player(String name, ArrayList<Die> dices, Board board)
+    public Player(String name, Cup cup, Board board)
     {
         this.name = name;
-        this.dices = dices;
+        this.cup = cup;
         this.board = board;
         this.piece = new Piece(name + "'s Piece", board.getStartingPos());
         this.money = 1500;
@@ -19,13 +19,9 @@ public class Player
 
     public void takeTurn()
     {
-        int value = 0;
+        int value = cup.getValue();
 
-        for (Die d : dices)
-        {
-            d.roll();
-            value += d.getValue();
-        }
+        cup.roll();
 
         System.out.println(name + " rolled " + String.valueOf(value));
 
