@@ -39,7 +39,7 @@ public class Board
 
     public Square getSquare(Square oldLocation, int offset)
     {
-        return squares.get(squares.indexOf(oldLocation) + offset % squares.size());
+        return squares.get((squares.indexOf(oldLocation) + offset) % squares.size());
     }
 
 }

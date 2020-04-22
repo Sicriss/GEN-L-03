@@ -27,6 +27,8 @@ public class Player
             value += d.getValue();
         }
 
+        System.out.println(name + " rolled " + String.valueOf(value));
+
         piece.setLocation(board.getSquare(piece.getLocation(), value));
 
         piece.getLocation().landedOn(this);

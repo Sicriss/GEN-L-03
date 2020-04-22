@@ -12,5 +12,6 @@ public class GoToJailSquare extends Square
     public void landedOn(Player player)
     {
         player.setLocation(jailReference);
+        System.out.println(player.getName() + " landed on " + this.getName() + " and was sent to " + jailReference.getName());
     }
 }

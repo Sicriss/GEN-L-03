@@ -9,5 +9,6 @@ public class GoSquare extends Square
     public void landedOn(Player player)
     {
         player.addCash(200);
+        System.out.println(player.getName() + " landed on " + this.getName() + " and received 200 !");
     }
 }

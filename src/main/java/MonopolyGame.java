@@ -41,7 +41,16 @@ public class MonopolyGame
             playerList.add(new Player(name, diceList, board));
         }
 
+        System.out.println("The game is about to begin");
+
         playGame();
+
+        System.out.println("The game has ended, the results are below.");
+
+        for (Player p : playerList)
+        {
+            System.out.println(p.getName() + " - " + p.getNetWorth());
+        }
     }
 
     private void playGame()
